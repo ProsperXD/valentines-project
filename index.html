@@ -3,26 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Small Project For Github</title>
+    <title>Valentine's Day</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script src="main.js"></script>
 </head>
-<body>
-    <div class="container">
-        <img src="images/happy-1.gif" alt="Happy">
-        <h1>Will You Be My valentines?</h1>
-        <div class="button-Container">
-            <button class="btn">Yes</button>
-            <button class="btn">No</button>
+<body class="bg-darky/30 text-white min-h-screen overflow-hidden select-none font-['Rubik']">
+    <div class="hearts-bg fixed inset-0 pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 flex flex-col items-center justify-center min-h-screen gap-1 relative">
+        <div class="main-content-wrapper transform transition-all duration-500 items-center justify-center flex flex-col gap-1 p-6 rounded-lg shadow-lg">
+            <img src="images/happy-1.gif" alt="Happy" class="w-64 md:w-80 rounded-lg pointer-events-none shadow-lg hover:scale-105 transition-transform duration-300 text-center">
+            <h1 class="text-2xl md:text-4xl font-bold text-center mt-6 mb-8 text-shadow">Will You Be My Valentine? 💝</h1>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="yes-btn transform hover:scale-110 bg-gradient-to-r from-green-400 to-green-600 px-12 py-3 rounded-lg text-lg md:text-xl transition-all duration-300 hover:shadow-lg shadow-green-500/50">Yes</button>
+                <button class="no-btn transform hover:scale-95 bg-gradient-to-r from-red-500 to-red-700 px-12 py-3 rounded-lg text-lg md:text-xl transition-all duration-300 hover:shadow-lg shadow-red-500/50">No</button>
+            </div>
         </div>
     </div>
 
-    <div class="celebration-container hidden">
-        <img src="images/happy-1.gif" alt="Happy">
-        <h1>Yay! Happy Valentine's Day! ❤️</h1>
-        <p>Thank you for making my day special!</p>
-        <button class="back-btn"><i class="fas fa-arrow-left"></i> Go Back</button>
+    <div class="celebration-container hidden fixed inset-0 bg-gradient-to-br from-pink-500 to-red-600 flex flex-col items-center justify-center gap-6 px-4">
+        <div class="celebration-content text-center transform items-center justify-center flex flex-col">
+            <img src="images/happy-1.gif" alt="Happy" class="w-64 md:w-80 rounded-lg pointer-events-none shadow-xl mb-6">
+            <h1 class="text-3xl md:text-5xl font-bold text-center mb-4">Yay! Happy Valentine's Day! ❤️</h1>
+            <p class="text-xl md:text-2xl text-center mb-8">Thank you for making my day special!</p>
+            <div class="hearts-celebration"></div>
+            <button class="back-btn bg-white/20 hover:bg-white/30 px-8 py-3 rounded-lg text-base md:text-lg transition-all duration-300 mt-4 hover:scale-105 transform">
+                <i class="fas fa-arrow-left mr-2"></i> Start Over
+            </button>
+        </div>
     </div>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "hsl(0, 100%, 50%)",
+                        "background-blend": "#8080804d",
+                        secondary: "hsl(0, 100%, 30%)",
+                        darky: "hsl(240 3.83% 16%)",
+                        "dark-100": "#0a0a0a",
+                        "dark-200": "#1a1a1a",
+                        "dark-300": "#262626",
+                        "dark-400": "#404040",
+                        "dark-700": "#4d4d4d",
+                        background: "hsl(var(--background))",
+                        foreground: "hsl(var(--foreground))",
+                    },
+                }
+            }
+        }
+    </script>
 </body>
 </html>
