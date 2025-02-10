@@ -11,7 +11,6 @@ When you open the project, you'll see a cute Valentine's Day GIF. Below the GIF,
 
 ## Site 
 https://robloxianlegend.github.io/valentines-project/
-https://valentines-project.pages.dev/
 
 ## Installation
 
