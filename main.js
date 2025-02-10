@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         noBtn.style.cursor = 'pointer';
         noBtn.disabled = false;
     }
+
     function updateImage(isHappy) {
         if (isHappy) {
             happyImageNumber = happyImageNumber % 3 + 1;
@@ -70,8 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     backBtn.addEventListener('click', function() {
-        reset();
-        celebrationContainer.classList.add('hidden');
-        container.classList.remove('hidden');
+        location.reload(); 
     });
 });
