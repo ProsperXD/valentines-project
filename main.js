@@ -3,6 +3,7 @@ $(document).ready(function() {
     let clickCount = 1;
     let sadImageNumber = 1;
     let happyImageNumber = 1;
+    const noButtonTexts = ['no', 'are u sure', 'pleaseee'];
 
     function createHearts() {
         const heartsContainer = $('.hearts-bg');
@@ -37,7 +38,9 @@ $(document).ready(function() {
 
         img.fadeOut(300, function() {
             if (isHappy) {
-                happyImageNumber = happyImageNumber % 3 + 1;
+                const key = Math.floor(Math.random() * 3) + 1;
+                happyImageNumber = key;
+                console.log(key);
                 img.attr('src', `images/happy-${happyImageNumber}.gif`);
                 celebrationImg.attr('src', `images/happy-${happyImageNumber}.gif`);
             } else {
@@ -97,6 +100,7 @@ $(document).ready(function() {
     }
 
     $('.no-btn').on('click', function() {
+        console.log('NOOOO PLEASE');
         currentScale -= 0.2;
         const noBtn = $(this);
         const yesBtn = $('.yes-btn');
@@ -132,6 +136,10 @@ $(document).ready(function() {
                 cursor: 'not-allowed'
             }).prop('disabled', true);
         }
+
+        const nextTextIndex = Math.min(clickCount, noButtonTexts.length - 1);
+        noBtn.text(noButtonTexts[nextTextIndex]);
+        clickCount++;
     });
 
     $('.yes-btn').on('click', function() {
